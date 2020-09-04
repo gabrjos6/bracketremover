@@ -1,5 +1,8 @@
+#Uses getpass for userautodetection when using default file paths
 import getpass
 user = getpass.getuser()
+
+#Determines in/out locations for files
 answerin = input("Full path to input file:\n")
 if answerin == "default":
 	if user == "root":
@@ -17,6 +20,8 @@ else:
 f=open(pathin, "r")
 strings = f.read()
 strings = strings.split("\n")
+
+#Removes all brackets and text inside brackets and writes result to new file as determined above
 for each in strings:
 	search = each
 	amount =  search.count("[")
